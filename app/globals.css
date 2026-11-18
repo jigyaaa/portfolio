@@ -1,0 +1,112 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  color: #fdf2f8;
+  background-color: #0d060f;
+  overflow-x: hidden;
+}
+
+/* Custom scrollbar with cherry blossom tones */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0d060f;
+}
+::-webkit-scrollbar-thumb {
+  background: #2b1126;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #f472b6;
+}
+
+/* Cherry blossom glow & gradient accents */
+.sakura-glow {
+  box-shadow: 0 0 30px -5px rgba(244, 114, 182, 0.25);
+}
+
+.text-gradient-sakura {
+  background: linear-gradient(135deg, #ffffff 0%, #fce7f3 45%, #f472b6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Blooming Sakura Animation (1st page) */
+@keyframes flowerBloom {
+  0% {
+    transform: scale(0.1) rotate(-45deg);
+    opacity: 0;
+    filter: blur(4px);
+  }
+  60% {
+    transform: scale(1.15) rotate(8deg);
+    opacity: 1;
+    filter: blur(0px);
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+    opacity: 1;
+  }
+}
+
+.animate-bloom {
+  animation: flowerBloom 1.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Floating & Falling Blossom Petals */
+@keyframes petalFall {
+  0% {
+    transform: translateY(-50px) translateX(0) rotate(0deg) scale(0.8);
+    opacity: 0;
+  }
+  15% {
+    opacity: 0.9;
+  }
+  85% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(105vh) translateX(60px) rotate(360deg) scale(1.05);
+    opacity: 0;
+  }
+}
+
+.petal-drift {
+  animation: petalFall linear infinite;
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    filter: drop-shadow(0 0 10px rgba(244, 114, 182, 0.4));
+  }
+  50% {
+    filter: drop-shadow(0 0 22px rgba(244, 114, 182, 0.8));
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 3s ease-in-out infinite;
+}
+
+/* Cursor Trail Blossom Particle Fade */
+@keyframes cursorParticleFade {
+  0% {
+    opacity: 0.95;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -20%) scale(0.35);
+  }
+}
+
+.animate-cursor-fade {
+  animation: cursorParticleFade 0.85s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}

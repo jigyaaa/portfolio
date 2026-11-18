@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jigya Gupta | Portfolio 🌸</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            sakura: {
+              50: "#fff1f5",
+              100: "#ffe4ec",
+              200: "#fecddc",
+              300: "#fba3c1",
+              400: "#f66c9f",
+              500: "#ed3d7f",
+              600: "#d91e64",
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      background-color: #0d060f;
+      color: #fdf2f8;
+      overflow-x: hidden;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
+    ::selection {
+      background-color: #ec4899;
+      color: #ffffff;
+    }
+    /* Custom scrollbar */
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: #0d060f; }
+    ::-webkit-scrollbar-thumb { background: #2b1126; border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: #f472b6; }
+
+    /* Blooming Sakura opening animation */
+    @keyframes flowerBloom {
+      0% {
+        transform: scale(0.1) rotate(-45deg);
+        opacity: 0;
+        filter: blur(4px);
+      }
+      60% {
+        transform: scale(1.15) rotate(8deg);
+        opacity: 1;
+        filter: blur(0px);
+      }
+      100% {
+        transform: scale(1) rotate(0deg);
+        opacity: 1;
+      }
+    }
+    .animate-bloom {
+      animation: flowerBloom 1.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    /* Falling Flowers & Petals animation */
+    @keyframes petalFall {
+      0% {
+        transform: translateY(-40px) translateX(0) rotate(0deg) scale(0.8);
+        opacity: 0;
+      }
+      15% { opacity: 0.9; }
+      85% { opacity: 0.8; }
+      100% {
+        transform: translateY(105vh) translateX(60px) rotate(360deg) scale(1.05);
+        opacity: 0;
+      }
+    }
+    .petal-drift {
+      animation: petalFall linear infinite;
+    }
+
+    @keyframes pulseGlow {
+      0%, 100% { filter: drop-shadow(0 0 10px rgba(244, 114, 182, 0.4)); }
+      50% { filter: drop-shadow(0 0 25px rgba(244, 114, 182, 0.8)); }
+    }
+    .animate-pulse-glow {
+      animation: pulseGlow 3s ease-in-out infinite;
+    }
+
+    /* Cursor Trail Particles */
+    .cursor-particle {
+      position: fixed;
+      pointer-events: none;
+      z-index: 9999;
+      user-select: none;
+      transition: transform 0.8s cubic-bezier(0.2, 1, 0.3, 1), opacity 0.8s ease-out;
+      text-shadow: 0 0 8px rgba(244, 114, 182, 0.8);
+    }
+  </style>
+</head>
+<body class="relative min-h-screen">
+
+  <!-- Interactive Cherry Blossom Cursor Trail Container -->
+  <div id="cursor-trail-container" class="pointer-events-none fixed inset-0 z-50 overflow-hidden" aria-hidden="true"></div>
+
+  <!-- Falling Small Flowers & Petals Drifting Down -->
+  <div class="pointer-events-none fixed inset-0 z-20 overflow-hidden" aria-hidden="true">
+    <div class="petal-drift absolute top-0 text-pink-300 text-lg" style="left: 8%; animation-delay: 0s; animation-duration: 11s;">🌸</div>
+    <div class="petal-drift absolute top-0 text-pink-400 text-sm" style="left: 20%; animation-delay: 3.5s; animation-duration: 14s;">❀</div>
+    <div class="petal-drift absolute top-0 text-pink-200 text-xs" style="left: 32%; animation-delay: 1.2s; animation-duration: 12s;">🌸</div>
+    <div class="petal-drift absolute top-0 text-pink-300 text-xl" style="left: 45%; animation-delay: 5s; animation-duration: 16s;">🌸</div>
+    <div class="petal-drift absolute top-0 text-rose-300 text-sm" style="left: 58%; animation-delay: 2.2s; animation-duration: 13s;">❀</div>
+    <div class="petal-drift absolute top-0 text-pink-300 text-base" style="left: 72%; animation-delay: 6s; animation-duration: 15s;">🌸</div>
+    <div class="petal-drift absolute top-0 text-pink-200 text-xs" style="left: 82%; animation-delay: 0.8s; animation-duration: 12.5s;">❀</div>
+    <div class="petal-drift absolute top-0 text-pink-400 text-lg" style="left: 92%; animation-delay: 4.2s; animation-duration: 14.5s;">🌸</div>
+  </div>
+
+  <!-- Ambient background glows -->
+  <div class="pointer-events-none fixed -top-40 -left-20 -z-10 h-[500px] w-[500px] rounded-full bg-pink-600/10 blur-[130px]"></div>
+  <div class="pointer-events-none fixed top-1/3 -right-32 -z-10 h-[600px] w-[600px] rounded-full bg-rose-500/10 blur-[150px]"></div>
+
+  <!-- 1. Navbar -->
+  <header class="sticky top-0 z-40 w-full border-b border-pink-950/60 bg-[#0d060f]/80 backdrop-blur-md">
+    <nav class="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
+      <a href="#" class="group flex items-center gap-2.5 font-mono text-lg font-bold tracking-tight text-white hover:text-pink-300">
+        <span class="flex h-8 w-8 items-center justify-center rounded-lg bg-pink-500/15 text-pink-300 ring-1 ring-pink-400/30">JG</span>
+        <span class="flex items-center gap-1.5 text-pink-100">Jigya Gupta <span class="text-sm">🌸</span></span>
+      </a>
+      <div class="hidden items-center gap-8 md:flex">
+        <ul class="flex items-center gap-8 text-sm font-medium text-pink-200/80">
+          <li><a href="#about" class="hover:text-pink-300 transition-colors">About</a></li>
+          <li><a href="#projects" class="hover:text-pink-300 transition-colors">Projects</a></li>
+          <li><a href="#contact" class="hover:text-pink-300 transition-colors">Contact</a></li>
+        </ul>
+        <a href="#contact" class="rounded-full bg-gradient-to-r from-pink-500 via-rose-500 to-pink-600 px-5 py-2 text-xs font-semibold uppercase tracking-wider text-white shadow-md shadow-pink-500/25 hover:from-pink-400 hover:to-rose-400 transition-all">
+          Get in touch 🌸
+        </a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- 2. Hero Section (With Opening Blooming Cherry Blossom Flower) -->
+  <section class="relative flex min-h-[calc(100vh-5rem)] items-center justify-center px-6 py-16 md:py-24 text-center">
+    <div class="mx-auto max-w-4xl flex flex-col items-center">
+      
+      <!-- Blooming Cherry Blossom Flower opening animation -->
+      <div class="relative mb-6 flex items-center justify-center">
+        <div class="absolute h-32 w-32 rounded-full bg-pink-500/20 blur-2xl animate-pulse"></div>
+        <div class="relative animate-bloom animate-pulse-glow">
+          <svg viewBox="0 0 100 100" class="h-24 w-24 sm:h-28 sm:w-28 drop-shadow-[0_0_15px_rgba(244,114,182,0.6)]" fill="none">
+            <defs>
+              <radialGradient id="sakuraGradHero" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stop-color="#ffb3cb" />
+                <stop offset="60%" stop-color="#f472b6" />
+                <stop offset="100%" stop-color="#db2777" />
+              </radialGradient>
+              <radialGradient id="centerGlowHero" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stop-color="#fef08a" />
+                <stop offset="60%" stop-color="#f43f5e" />
+                <stop offset="100%" stop-color="#9f1239" />
+              </radialGradient>
+            </defs>
+            <!-- 5 Petals -->
+            <g transform="rotate(0 50 50)"><path d="M50 50 C42 32 30 18 45 10 C48 8 50 12 50 12 C50 12 52 8 55 10 C70 18 58 32 50 50 Z" fill="url(#sakuraGradHero)" stroke="#fbcfe8" stroke-width="0.8"/></g>
+            <g transform="rotate(72 50 50)"><path d="M50 50 C42 32 30 18 45 10 C48 8 50 12 50 12 C50 12 52 8 55 10 C70 18 58 32 50 50 Z" fill="url(#sakuraGradHero)" stroke="#fbcfe8" stroke-width="0.8"/></g>
+            <g transform="rotate(144 50 50)"><path d="M50 50 C42 32 30 18 45 10 C48 8 50 12 50 12 C50 12 52 8 55 10 C70 18 58 32 50 50 Z" fill="url(#sakuraGradHero)" stroke="#fbcfe8" stroke-width="0.8"/></g>
+            <g transform="rotate(216 50 50)"><path d="M50 50 C42 32 30 18 45 10 C48 8 50 12 50 12 C50 12 52 8 55 10 C70 18 58 32 50 50 Z" fill="url(#sakuraGradHero)" stroke="#fbcfe8" stroke-width="0.8"/></g>
+            <g transform="rotate(288 50 50)"><path d="M50 50 C42 32 30 18 45 10 C48 8 50 12 50 12 C50 12 52 8 55 10 C70 18 58 32 50 50 Z" fill="url(#sakuraGradHero)" stroke="#fbcfe8" stroke-width="0.8"/></g>
+            <!-- Center Core -->
+            <circle cx="50" cy="50" r="7" fill="url(#centerGlowHero)" />
+          </svg>
+        </div>
+      </div>
+
+      <!-- College Chip -->
+      <div class="mb-6 inline-flex items-center gap-2 rounded-full border border-pink-500/30 bg-pink-950/40 px-3.5 py-1.5 text-xs font-medium text-pink-300">
+        <span class="relative flex h-2 w-2">
+          <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-pink-400 opacity-75"></span>
+          <span class="relative inline-flex h-2 w-2 rounded-full bg-pink-500"></span>
+        </span>
+        <span>🌸 1st Sem CS @ BIT, Bangalore</span>
+      </div>
+
+      <!-- Large Name -->
+      <h1 class="text-4xl font-extrabold tracking-tight sm:text-6xl md:text-7xl lg:text-8xl">
+        Hi, I'm <span class="bg-gradient-to-r from-pink-300 via-rose-200 to-pink-400 bg-clip-text text-transparent">Jigya Gupta</span>
+      </h1>
+
+      <p class="mt-6 max-w-2xl text-lg text-pink-100/90 sm:text-xl md:text-2xl font-light leading-relaxed">
+        CS student who loves building modern web apps and elegant digital experiences.
+      </p>
+
+      <div class="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center">
+        <a href="#projects" class="inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-pink-500 via-rose-500 to-pink-600 px-7 py-3.5 text-sm font-semibold text-white shadow-lg shadow-pink-600/25 hover:-translate-y-1 hover:from-pink-400 hover:to-rose-400 transition-all">
+          <span>View my work</span>
+          <span>→</span>
+        </a>
+        <a href="#contact" class="inline-flex items-center justify-center rounded-xl border border-pink-900/60 bg-[#160b18]/60 px-7 py-3.5 text-sm font-semibold text-pink-100 hover:-translate-y-1 hover:border-pink-500/60 hover:text-white transition-all">
+          Contact me 🌸
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. About Section -->
+  <section id="about" class="scroll-mt-24 px-6 py-20 md:py-28">
+    <div class="mx-auto max-w-5xl">
+      <div class="mb-12 flex flex-col items-center text-center">
+        <span class="font-mono text-xs font-semibold uppercase tracking-widest text-pink-400">🌸 Get To Know Me</span>
+        <h2 class="mt-2 text-3xl font-bold tracking-tight text-white sm:text-4xl md:text-5xl">About Me</h2>
+        <div class="mt-4 h-1 w-16 rounded-full bg-gradient-to-r from-pink-500 to-rose-400"></div>
+      </div>
+
+      <div class="grid gap-10 rounded-2xl border border-pink-950/60 bg-[#160b18]/50 p-8 backdrop-blur-sm md:grid-cols-12 md:p-12">
+        <div class="flex flex-col justify-center space-y-4 md:col-span-7">
+          <h3 class="text-xl font-semibold text-pink-100 sm:text-2xl flex items-center gap-2">
+            Hello! I'm Jigya Gupta. <span>🌸</span>
+          </h3>
+          <p class="text-base leading-relaxed text-pink-100/90">
+            I am currently pursuing Computer Science at <span class="font-semibold text-white">Bangalore Institute of Technology (BIT), Bangalore</span> in my 1st semester.
+          </p>
+          <p class="text-base leading-relaxed text-pink-200/70">
+            I am passionate about programming, learning modern web development frameworks, and turning creative concepts into functional web applications.
+          </p>
+          <p class="text-base leading-relaxed text-pink-200/70">
+            Always curious and excited to learn, I spend my time exploring frontend architectures, writing Python scripts, and experimenting with new tech stacks.
+          </p>
+          <div class="pt-2 text-sm text-pink-300 font-mono">
+            📍 Based in Bangalore, India
+          </div>
+        </div>
+
+        <div class="flex flex-col justify-center rounded-xl border border-pink-950/80 bg-[#0d060f]/80 p-6 md:col-span-5">
+          <h4 class="mb-4 text-sm font-semibold uppercase tracking-wider text-pink-300">Technical Skills</h4>
+          <div class="flex flex-wrap gap-2.5">
+            <span class="rounded-lg border border-pink-900/40 bg-pink-950/30 px-3.5 py-2 text-sm font-medium text-pink-100">HTML</span>
+            <span class="rounded-lg border border-pink-900/40 bg-pink-950/30 px-3.5 py-2 text-sm font-medium text-pink-100">CSS</span>
+            <span class="rounded-lg border border-pink-900/40 bg-pink-950/30 px-3.5 py-2 text-sm font-medium text-pink-100">JavaScript</span>
+            <span class="rounded-lg border border-pink-900/40 bg-pink-950/30 px-3.5 py-2 text-sm font-medium text-pink-100">React</span>
+            <span class="rounded-lg border border-pink-900/40 bg-pink-950/30 px-3.5 py-2 text-sm font-medium text-pink-100">Python</span>
+          </div>
+          <p class="mt-6 text-xs text-pink-300/70 border-t border-pink-950/80 pt-4">
+            Currently sharpening full-stack fundamentals, building interactive React apps, and algorithm practice in Python.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. Projects Section -->
+  <section id="projects" class="scroll-mt-24 px-6 py-20 md:py-28">
+    <div class="mx-auto max-w-6xl">
+      <div class="mb-14 flex flex-col items-center text-center">
+        <span class="font-mono text-xs font-semibold uppercase tracking-widest text-pink-400">🌸 Portfolio</span>
+        <h2 class="mt-2 text-3xl font-bold tracking-tight text-white sm:text-4xl md:text-5xl">Featured Projects</h2>
+        <div class="mt-4 h-1 w-16 rounded-full bg-gradient-to-r from-pink-500 to-rose-400"></div>
+      </div>
+
+      <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
+        <article class="rounded-2xl border border-pink-950/60 bg-[#160b18]/50 p-6 transition-all hover:-translate-y-1.5 hover:border-pink-500/50">
+          <h3 class="text-xl font-bold text-white hover:text-pink-300">Interactive Developer Portfolio</h3>
+          <p class="mt-2 text-sm text-pink-100/80">A fast, modern personal portfolio website crafted with Next.js App Router, TypeScript, and Tailwind CSS featuring smooth scroll navigation and cherry blossom aesthetics.</p>
+          <div class="mt-4 flex flex-wrap gap-2">
+            <span class="rounded-md bg-pink-950/60 px-2.5 py-1 text-xs font-medium text-pink-300">Next.js</span>
+            <span class="rounded-md bg-pink-950/60 px-2.5 py-1 text-xs font-medium text-pink-300">React</span>
+            <span class="rounded-md bg-pink-950/60 px-2.5 py-1 text-xs font-medium text-pink-300">Tailwind CSS</span>
+          </div>
+          <a href="https://github.com/jigyagupta/portfolio" target="_blank" class="mt-5 inline-block text-sm font-semibold text-pink-400 hover:text-pink-300">View on GitHub 🌸 →</a>
+        </article>
+
+        <article class="rounded-2xl border border-pink-950/60 bg-[#160b18]/50 p-6 transition-all hover:-translate-y-1.5 hover:border-pink-500/50">
+          <h3 class="text-xl font-bold text-white hover:text-pink-300">Web Task & Study Planner</h3>
+          <p class="mt-2 text-sm text-pink-100/80">A responsive productivity web app for college students to manage coursework, deadlines, and study goals with real-time UI updates.</p>
+          <div class="mt-4 flex flex-wrap gap-2">
+            <span class="rounded-md bg-pink-950/60 px-2.5 py-1 text-xs font-medium text-pink-300">React</span>
+            <span class="rounded-md bg-pink-950/60 px-2.5 py-1 text-xs font-medium text-pink-300">JavaScript</span>
+            <span class="rounded-md bg-pink-950/60 px-2.5 py-1 text-xs font-medium text-pink-300">CSS3</span>
+          </div>
+          <a href="https://github.com/jigyagupta/task-planner" target="_blank" class="mt-5 inline-block text-sm font-semibold text-pink-400 hover:text-pink-300">View on GitHub 🌸 →</a>
+        </article>
+
+        <article class="rounded-2xl border border-pink-950/60 bg-[#160b18]/50 p-6 transition-all hover:-translate-y-1.5 hover:border-pink-500/50">
+          <h3 class="text-xl font-bold text-white hover:text-pink-300">Python Automation & Scraping Suite</h3>
+          <p class="mt-2 text-sm text-pink-100/80">A collection of lightweight Python automation scripts to parse data, generate reports, and automate daily repetitive computer tasks.</p>
+          <div class="mt-4 flex flex-wrap gap-2">
+            <span class="rounded-md bg-pink-950/60 px-2.5 py-1 text-xs font-medium text-pink-300">Python</span>
+            <span class="rounded-md bg-pink-950/60 px-2.5 py-1 text-xs font-medium text-pink-300">Automation</span>
+          </div>
+          <a href="https://github.com/jigyagupta/python-automation" target="_blank" class="mt-5 inline-block text-sm font-semibold text-pink-400 hover:text-pink-300">View on GitHub 🌸 →</a>
+        </article>
+
+        <article class="rounded-2xl border border-pink-950/60 bg-[#160b18]/50 p-6 transition-all hover:-translate-y-1.5 hover:border-pink-500/50">
+          <h3 class="text-xl font-bold text-white hover:text-pink-300">Algorithms & Logic Visualizer</h3>
+          <p class="mt-2 text-sm text-pink-100/80">An educational web application demonstrating fundamental computer science data structures and sorting algorithms.</p>
+          <div class="mt-4 flex flex-wrap gap-2">
+            <span class="rounded-md bg-pink-950/60 px-2.5 py-1 text-xs font-medium text-pink-300">JavaScript</span>
+            <span class="rounded-md bg-pink-950/60 px-2.5 py-1 text-xs font-medium text-pink-300">Algorithms</span>
+          </div>
+          <a href="https://github.com/jigyagupta/algo-visualizer" target="_blank" class="mt-5 inline-block text-sm font-semibold text-pink-400 hover:text-pink-300">View on GitHub 🌸 →</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. Contact Section -->
+  <section id="contact" class="scroll-mt-24 px-6 py-20 md:py-28">
+    <div class="mx-auto max-w-6xl">
+      <div class="mb-14 flex flex-col items-center text-center">
+        <span class="font-mono text-xs font-semibold uppercase tracking-widest text-pink-400">🌸 Connect</span>
+        <h2 class="mt-2 text-3xl font-bold tracking-tight text-white sm:text-4xl md:text-5xl">Get In Touch</h2>
+        <div class="mt-4 h-1 w-16 rounded-full bg-gradient-to-r from-pink-500 to-rose-400"></div>
+      </div>
+
+      <div class="grid gap-12 lg:grid-cols-12">
+        <div class="flex flex-col justify-between space-y-8 rounded-2xl border border-pink-950/60 bg-[#160b18]/50 p-8 lg:col-span-5">
+          <div>
+            <h3 class="text-xl font-bold text-white sm:text-2xl flex items-center gap-2">Let's talk! <span>🌸</span></h3>
+            <p class="mt-3 text-sm text-pink-100/80">I am open to collaborations, internships, open-source projects, and networking with fellow developers.</p>
+            <div class="mt-6 space-y-4">
+              <div>
+                <span class="text-xs text-pink-300/70 uppercase font-semibold">Email</span>
+                <p class="text-sm font-medium text-pink-100"><a href="mailto:jigya.pisces@gmail.com" class="hover:text-pink-300">jigya.pisces@gmail.com</a></p>
+              </div>
+              <div>
+                <span class="text-xs text-pink-300/70 uppercase font-semibold">Location</span>
+                <p class="text-sm font-medium text-pink-100">BIT, Bangalore • Karnataka, India</p>
+              </div>
+            </div>
+          </div>
+          <div class="flex gap-3 pt-4 border-t border-pink-950/60">
+            <a href="https://github.com/jigyagupta" target="_blank" class="rounded-xl border border-pink-900/40 bg-pink-950/30 px-4 py-2 text-sm text-pink-200 hover:text-white">GitHub</a>
+            <a href="https://linkedin.com/in/jigyagupta" target="_blank" class="rounded-xl border border-pink-900/40 bg-pink-950/30 px-4 py-2 text-sm text-pink-200 hover:text-white">LinkedIn</a>
+          </div>
+        </div>
+
+        <div class="rounded-2xl border border-pink-950/60 bg-[#160b18]/50 p-8 lg:col-span-7">
+          <form onsubmit="event.preventDefault(); alert('🌸 Thank you for reaching out! Jigya will get back to you soon.');" class="space-y-6">
+            <div>
+              <label class="block text-sm font-medium text-pink-200">Your Name</label>
+              <input type="text" required placeholder="e.g. Alex Smith" class="mt-2 block w-full rounded-xl border border-pink-950/80 bg-[#0d060f]/90 px-4 py-3 text-sm text-pink-50 placeholder-pink-300/40 focus:border-pink-500 focus:outline-none">
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-pink-200">Your Email</label>
+              <input type="email" required placeholder="alex@example.com" class="mt-2 block w-full rounded-xl border border-pink-950/80 bg-[#0d060f]/90 px-4 py-3 text-sm text-pink-50 placeholder-pink-300/40 focus:border-pink-500 focus:outline-none">
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-pink-200">Your Message</label>
+              <textarea rows="4" required placeholder="Hi Jigya, I'd love to connect..." class="mt-2 block w-full resize-none rounded-xl border border-pink-950/80 bg-[#0d060f]/90 px-4 py-3 text-sm text-pink-50 placeholder-pink-300/40 focus:border-pink-500 focus:outline-none"></textarea>
+            </div>
+            <button type="submit" class="rounded-xl bg-gradient-to-r from-pink-500 via-rose-500 to-pink-600 px-6 py-3.5 text-sm font-semibold text-white shadow-lg shadow-pink-600/25 hover:from-pink-400 hover:to-rose-400 transition-all">
+              Send message 🌸
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. Footer (With Small Flowers Down) -->
+  <footer class="border-t border-pink-950/60 bg-[#0d060f] py-10 px-6">
+    <div class="mx-auto max-w-6xl text-center">
+      <div class="flex items-center justify-center gap-3 py-3 text-pink-400/80">
+        <span>❀</span>
+        <span>🌸</span>
+        <span class="text-sm font-serif tracking-widest text-pink-300">🌸 ❀ 🌸 ❀ 🌸</span>
+        <span>🌸</span>
+        <span>❀</span>
+      </div>
+      <div class="mt-4 flex flex-col items-center justify-between gap-4 sm:flex-row border-t border-pink-950/40 pt-6 text-sm text-pink-300/70">
+        <p>&copy; 2026 <span class="font-medium text-pink-100">Jigya Gupta</span>. All rights reserved. 🌸</p>
+        <div class="flex gap-6">
+          <a href="#about" class="hover:text-pink-300">About</a>
+          <a href="#projects" class="hover:text-pink-300">Projects</a>
+          <a href="#contact" class="hover:text-pink-300">Contact</a>
+          <a href="#" class="text-pink-400/60 hover:text-pink-300">Top ↑</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Cursor Trail Script -->
+  <script>
+    (function() {
+      const container = document.getElementById('cursor-trail-container');
+      const icons = ['🌸', '❀', '✿', '✦', '•'];
+      let lastMove = 0;
+      const throttle = 30; // ms
+
+      window.addEventListener('mousemove', function(e) {
+        const now = performance.now();
+        if (now - lastMove < throttle) return;
+        lastMove = now;
+
+        const particle = document.createElement('span');
+        particle.className = 'cursor-particle';
+        particle.textContent = icons[Math.floor(Math.random() * icons.length)];
+        
+        const size = Math.random() * 8 + 12; // 12px to 20px
+        const rot = Math.random() * 360;
+        const driftX = (Math.random() - 0.5) * 35;
+        const driftY = Math.random() * 25 + 15;
+
+        particle.style.left = e.clientX + 'px';
+        particle.style.top = e.clientY + 'px';
+        particle.style.fontSize = size + 'px';
+        particle.style.transform = `translate(-50%, -50%) rotate(${rot}deg) scale(1)`;
+        particle.style.opacity = '0.95';
+        particle.style.color = (particle.textContent === '•' || particle.textContent === '✦') ? '#fbcfe8' : 'inherit';
+
+        container.appendChild(particle);
+
+        // Animate drift & fade
+        requestAnimationFrame(() => {
+          particle.style.transform = `translate(calc(-50% + ${driftX}px), calc(-50% + ${driftY}px)) rotate(${rot + 45}deg) scale(0.3)`;
+          particle.style.opacity = '0';
+        });
+
+        // Cleanup
+        setTimeout(() => {
+          if (particle.parentNode) {
+            particle.parentNode.removeChild(particle);
+          }
+        }, 800);
+      });
+    })();
+  </script>
+
+</body>
+</html>
