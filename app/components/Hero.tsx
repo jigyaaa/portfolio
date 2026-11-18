@@ -1,98 +1,83 @@
-import { BloomingSakuraHero } from "./CherryBlossomDecor";
-
 export default function Hero() {
   return (
-    <section className="relative flex min-h-[calc(100vh-5rem)] items-center justify-center overflow-hidden px-6 py-16 md:py-24">
-      {/* Background ambient gradient glow */}
-      <div
-        className="pointer-events-none absolute -top-40 left-1/2 -z-10 h-[500px] w-[500px] -translate-x-1/2 rounded-full bg-pink-600/15 blur-[120px] md:h-[600px] md:w-[600px]"
-        aria-hidden="true"
-      />
-      <div
-        className="pointer-events-none absolute top-1/2 right-10 -z-10 h-72 w-72 rounded-full bg-rose-500/10 blur-[100px]"
-        aria-hidden="true"
-      />
+    <section className="relative min-h-[calc(100vh-6rem)] border-b border-[#232530] px-6 py-16 md:py-24 lg:py-32 flex flex-col justify-between">
+      {/* Background Architectural Grid Accent */}
+      <div className="pointer-events-none absolute inset-0 bg-grid-architect opacity-40 -z-10" />
 
-      <div className="mx-auto flex max-w-4xl flex-col items-center text-center">
-        {/* Blooming Sakura Blossom (Opens gracefully on page load) */}
-        <BloomingSakuraHero />
-
-        {/* Status / College chip */}
-        <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-pink-500/30 bg-pink-950/40 px-3.5 py-1.5 text-xs font-medium text-pink-300 backdrop-blur-sm transition-transform duration-300 hover:scale-105">
-          <span className="relative flex h-2 w-2">
-            <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-pink-400 opacity-75"></span>
-            <span className="relative inline-flex h-2 w-2 rounded-full bg-pink-500"></span>
+      {/* Top Section Tag & Coordinates */}
+      <div className="mx-auto w-full max-w-7xl flex flex-col md:flex-row md:items-center justify-between gap-4 font-mono text-xs text-[#71717a] pb-8 border-b border-[#181920]">
+        <div className="flex items-center gap-3">
+          <span className="text-[#d4ff32] font-semibold">// 001. PROLOGUE</span>
+          <span>•</span>
+          <span>PORTFOLIO COMPENDIUM</span>
+        </div>
+        <div className="flex items-center gap-4">
+          <span className="border border-[#232530] px-2.5 py-1 text-[11px] bg-[#111217] text-[#a1a1aa]">
+            1ST SEMESTER CS @ BIT BANGALORE
           </span>
-          <span>🌸 1st Sem CS @ BIT, Bangalore</span>
+          <span className="hidden sm:inline text-[#52525b]">SPEC.VER // 2.6</span>
+        </div>
+      </div>
+
+      {/* Central Typographic Statement */}
+      <div className="mx-auto w-full max-w-7xl my-auto py-12 md:py-20">
+        <div className="relative">
+          {/* Subtle watermark index */}
+          <span className="absolute -top-10 left-0 font-mono text-xs text-[#52525b] uppercase tracking-widest">
+            ENGINEER & INTERFACE CRAFTER
+          </span>
+
+          {/* Staggered Giant Typographic Sculpture */}
+          <div className="flex flex-col select-none">
+            <h1 className="text-6xl sm:text-8xl md:text-9xl lg:text-[11rem] font-black uppercase tracking-tighter leading-[0.88] text-[#f5f5f3]">
+              Jigya
+            </h1>
+            <div className="flex flex-col md:flex-row md:items-baseline justify-between mt-2 md:mt-4">
+              <span className="text-6xl sm:text-8xl md:text-9xl lg:text-[11rem] font-light uppercase tracking-tighter leading-[0.88] text-[#71717a] hover:text-[#d4ff32] transition-colors duration-300">
+                Gupta
+              </span>
+              <div className="mt-6 md:mt-0 max-w-md font-mono text-xs text-[#a1a1aa] leading-relaxed border-l-2 border-[#d4ff32] pl-4">
+                [ FOCUS: WEB ARCHITECTURE & COMPUTATIONAL SYSTEMS ]
+                <p className="mt-2 text-sm text-[#f5f5f3] font-sans font-normal leading-normal">
+                  CS student who loves building modern web apps and elegant software solutions.
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
 
-        {/* Large Name */}
-        <h1 className="text-4xl font-extrabold tracking-tight sm:text-6xl md:text-7xl lg:text-8xl">
-          Hi, I&apos;m{" "}
-          <span className="bg-gradient-to-r from-pink-300 via-rose-200 to-pink-400 bg-clip-text text-transparent">
-            Jigya Gupta
-          </span>
-        </h1>
-
-        {/* One-line Intro */}
-        <p className="mt-6 max-w-2xl text-lg text-pink-100/90 sm:text-xl md:text-2xl font-light leading-relaxed">
-          CS student who loves building modern web apps and elegant digital experiences.
-        </p>
-
-        {/* Action Buttons */}
-        <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center">
-          {/* Button 1: View my work */}
+        {/* Action Buttons & Navigation Triggers */}
+        <div className="mt-12 md:mt-16 flex flex-wrap items-center gap-4 sm:gap-6 pt-8 border-t border-[#181920]">
+          {/* Button 1: View my work (scrolls to Projects) */}
           <a
             href="#projects"
-            className="group inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-pink-500 via-rose-500 to-pink-600 px-7 py-3.5 text-sm font-semibold text-white shadow-lg shadow-pink-600/25 transition-all duration-300 hover:-translate-y-1 hover:from-pink-400 hover:to-rose-400 hover:shadow-xl hover:shadow-pink-500/40 active:translate-y-0"
+            className="group relative inline-flex items-center gap-3 border border-[#d4ff32] bg-[#d4ff32] px-8 py-4 font-mono text-xs font-semibold uppercase tracking-widest text-[#08080a] transition-all duration-200 hover:bg-[#b8e617] hover:border-[#b8e617] active:scale-95"
           >
             <span>View my work</span>
-            <svg
-              className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth="2.5"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"
-              />
-            </svg>
+            <span className="transition-transform group-hover:translate-y-0.5">↓</span>
           </a>
 
-          {/* Button 2: Contact me */}
+          {/* Button 2: Contact me (scrolls to Contact) */}
           <a
             href="#contact"
-            className="inline-flex items-center justify-center rounded-xl border border-pink-900/60 bg-[#160b18]/60 px-7 py-3.5 text-sm font-semibold text-pink-100 backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-pink-500/60 hover:bg-pink-950/40 hover:text-white active:translate-y-0"
+            className="group inline-flex items-center gap-3 border border-[#3f3f46] bg-[#111217] px-8 py-4 font-mono text-xs font-semibold uppercase tracking-widest text-[#f5f5f3] transition-all duration-200 hover:border-[#d4ff32] hover:text-[#d4ff32] active:scale-95"
           >
-            Contact me 🌸
+            <span>Contact me</span>
+            <span className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5">↗</span>
           </a>
-        </div>
 
-        {/* Scroll indicator */}
-        <div className="mt-14 animate-bounce">
-          <a
-            href="#about"
-            aria-label="Scroll to about section"
-            className="text-pink-400/60 transition-colors hover:text-pink-300"
-          >
-            <svg
-              className="h-6 w-6"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth="2"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M19.5 8.25l-7.5 7.5-7.5-7.5"
-              />
-            </svg>
-          </a>
+          <div className="hidden lg:flex items-center gap-3 ml-auto font-mono text-xs text-[#52525b]">
+            <span>SCROLL TO EXPLORE</span>
+            <span className="animate-bounce text-[#d4ff32]">↓</span>
+          </div>
         </div>
+      </div>
+
+      {/* Bottom Metadata Ribbon */}
+      <div className="mx-auto w-full max-w-7xl pt-4 flex items-center justify-between font-mono text-[11px] text-[#52525b]">
+        <span>BANGALORE INSTITUTE OF TECHNOLOGY // DEPT. OF CSE</span>
+        <span className="hidden sm:inline">COORDINATES: 12.9716° N, 77.5946° E</span>
+        <span>INDEX REF: [01-04]</span>
       </div>
     </section>
   );

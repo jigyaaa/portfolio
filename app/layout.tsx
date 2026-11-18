@@ -2,10 +2,10 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Jigya Gupta | Portfolio 🌸",
+  title: "JIGYA GUPTA // Computational Systems & Web Architecture",
   description:
-    "Personal portfolio of Jigya Gupta - CS student at BIT, Bangalore who loves building modern web apps. Cherry blossom themed.",
-  keywords: ["Jigya Gupta", "Portfolio", "Web Developer", "React", "Python", "BIT Bangalore", "Cherry Blossom"],
+    "Personal archive and digital portfolio of Jigya Gupta — 1st Semester Computer Science student at Bangalore Institute of Technology (BIT), Bangalore.",
+  keywords: ["Jigya Gupta", "Computer Science", "BIT Bangalore", "React", "Python", "Full Stack Developer"],
   authors: [{ name: "Jigya Gupta" }],
   viewport: "width=device-width, initial-scale=1",
 };
@@ -17,7 +17,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth dark">
-      <body className="min-h-screen bg-[#0d060f] text-pink-50 antialiased selection:bg-pink-500 selection:text-white">
+      <body className="min-h-screen bg-[#08080a] text-[#f5f5f3] antialiased selection:bg-[#d4ff32] selection:text-[#08080a]">
         {children}
       </body>
     </html>

@@ -1,119 +1,153 @@
 export default function About() {
   const skills = [
     {
-      name: "HTML",
-      icon: (
-        <svg className="h-4 w-4 text-orange-400" viewBox="0 0 24 24" fill="currentColor">
-          <path d="M12 2L3 5l1.6 15.3L12 22l7.4-1.7L21 5l-9-3zm0 2.2l6.8 2.3-1.3 12.3L12 20.1V4.2z" />
-        </svg>
-      ),
-      level: "Frontend Core",
-    },
-    {
-      name: "CSS",
-      icon: (
-        <svg className="h-4 w-4 text-sky-400" viewBox="0 0 24 24" fill="currentColor">
-          <path d="M12 2L3 5l1.6 15.3L12 22l7.4-1.7L21 5l-9-3zm0 2.2l6.8 2.3-1.3 12.3L12 20.1V4.2z" />
-        </svg>
-      ),
-      level: "Styling & Layout",
-    },
-    {
-      name: "JavaScript",
-      icon: (
-        <svg className="h-4 w-4 text-yellow-400" viewBox="0 0 24 24" fill="currentColor">
-          <path d="M3 3h18v18H3V3zm11.3 13.9c.7.4 1.5.7 2.3.7 1.2 0 1.9-.6 1.9-1.5 0-1-.6-1.4-2.1-2-.2-.1-.5-.2-.7-.3-2.1-.8-3.1-2-3.1-3.6 0-1.8 1.4-3.2 3.6-3.2 1 0 1.9.3 2.7.7l-.7 1.6c-.6-.4-1.3-.6-2-.6-1.1 0-1.7.6-1.7 1.3 0 .8.5 1.2 1.8 1.7.2.1.5.2.7.3 2.3.9 3.4 2 3.4 3.9 0 2-1.5 3.4-4 3.4-1.2 0-2.3-.4-3.1-.9l.7-1.8zm-5.7.1c.5.3 1.1.5 1.7.5.8 0 1.3-.3 1.3-1.2V9.2h2v7.1c0 2-1.2 3.1-3.1 3.1-.9 0-1.8-.3-2.4-.7l.5-1.7z" />
-        </svg>
-      ),
-      level: "ES6+ Logic",
-    },
-    {
       name: "React",
-      icon: (
-        <svg className="h-4 w-4 text-cyan-400" viewBox="0 0 24 24" fill="currentColor">
-          <circle cx="12" cy="12" r="2.5" />
-          <ellipse cx="12" cy="12" rx="10" ry="4.5" fill="none" stroke="currentColor" strokeWidth="1.5" />
-          <ellipse cx="12" cy="12" rx="10" ry="4.5" fill="none" stroke="currentColor" strokeWidth="1.5" transform="rotate(60 12 12)" />
-          <ellipse cx="12" cy="12" rx="10" ry="4.5" fill="none" stroke="currentColor" strokeWidth="1.5" transform="rotate(120 12 12)" />
-        </svg>
-      ),
-      level: "UI Framework",
+      category: "UI Architecture",
+      indicator: "MODERN VIRTUAL DOM & STATE HOOKS",
+      badge: "FRAMEWORK",
     },
     {
       name: "Python",
-      icon: (
-        <svg className="h-4 w-4 text-pink-400" viewBox="0 0 24 24" fill="currentColor">
-          <path d="M12 2c-3.3 0-5.4 1.5-5.4 3.7v1.8h5.5v.9H4.3C2.1 8.4 1 10.3 1 12.8c0 2.6 1.4 4.3 3.6 4.3h1.8v-2.3c0-1.8 1.5-3.3 3.3-3.3h5.4c1.5 0 2.7-1.2 2.7-2.7V5.7C17.8 3.5 15.3 2 12 2zm-1.8 1.8c.6 0 1 .4 1 1s-.4 1-1 1-1-.4-1-1 .4-1 1-1zM19.7 6.9h-1.8v2.3c0 1.8-1.5 3.3-3.3 3.3H9.2c-1.5 0-2.7 1.2-2.7 2.7v3.1c0 2.2 2.5 3.7 5.8 3.7 3.3 0 5.4-1.5 5.4-3.7v-1.8h-5.5v-.9h7.8c2.2 0 3.3-1.9 3.3-4.4 0-2.6-1.4-4.3-3.6-4.3zm-5.9 13.5c-.6 0-1-.4-1-1s.4-1 1-1 1 .4 1 1-.4 1-1 1z" />
-        </svg>
-      ),
-      level: "Programming & Scripts",
+      category: "Computational Logic",
+      indicator: "DATA STRUCTURES, CLI & AUTOMATION",
+      badge: "CORE LOGIC",
+    },
+    {
+      name: "JavaScript",
+      category: "Web Engine",
+      indicator: "ES6+, ASYNC PATTERNS & CLIENT RUNTIME",
+      badge: "RUNTIME",
+    },
+    {
+      name: "CSS",
+      category: "Design Systems",
+      indicator: "RESPONSIVE LAYOUTS & TAILWIND",
+      badge: "STYLING",
+    },
+    {
+      name: "HTML",
+      category: "Semantic Web",
+      indicator: "ACCESSIBLE DOM & COMPONENT HIERARCHY",
+      badge: "FOUNDATION",
     },
   ];
 
   return (
-    <section id="about" className="scroll-mt-24 px-6 py-20 md:py-28">
-      <div className="mx-auto max-w-5xl">
+    <section id="about" className="scroll-mt-24 border-b border-[#232530] px-6 py-20 md:py-28 lg:py-32">
+      <div className="mx-auto max-w-7xl">
         {/* Section Header */}
-        <div className="mb-12 flex flex-col items-center text-center">
-          <span className="font-mono text-xs font-semibold uppercase tracking-widest text-pink-400">
-            🌸 Get To Know Me
-          </span>
-          <h2 className="mt-2 text-3xl font-bold tracking-tight text-white sm:text-4xl md:text-5xl">
-            About Me
-          </h2>
-          <div className="mt-4 h-1 w-16 rounded-full bg-gradient-to-r from-pink-500 to-rose-400" />
+        <div className="flex flex-col md:flex-row md:items-end justify-between pb-8 border-b border-[#181920] gap-4">
+          <div>
+            <span className="font-mono text-xs uppercase tracking-widest text-[#d4ff32]">
+              // 01. DOSSIER & MANIFESTO
+            </span>
+            <h2 className="mt-2 text-4xl sm:text-5xl md:text-6xl font-black uppercase tracking-tight text-[#f5f5f3]">
+              About Me
+            </h2>
+          </div>
+          <div className="font-mono text-xs text-[#71717a] text-right">
+            <span>BIT.BLR // SEM-01</span>
+            <span className="block text-[#52525b]">SPEC: CS_ENGINEERING</span>
+          </div>
         </div>
 
-        {/* Content Card */}
-        <div className="grid gap-10 rounded-2xl border border-pink-950/60 bg-[#160b18]/50 p-8 backdrop-blur-sm md:grid-cols-12 md:p-12">
-          {/* Bio text column */}
-          <div className="flex flex-col justify-center space-y-4 md:col-span-7">
-            <h3 className="text-xl font-semibold text-pink-100 sm:text-2xl flex items-center gap-2">
-              Hello! I&apos;m Jigya Gupta. <span>🌸</span>
-            </h3>
-            <p className="text-base leading-relaxed text-pink-100/90">
-              I am currently pursuing Computer Science at{" "}
-              <span className="font-semibold text-white">Bangalore Institute of Technology (BIT), Bangalore</span> in my 1st semester.
-            </p>
-            <p className="text-base leading-relaxed text-pink-200/70">
-              I am passionate about programming, learning modern web development frameworks, and turning creative concepts into functional web applications.
-            </p>
-            <p className="text-base leading-relaxed text-pink-200/70">
-              Always curious and excited to learn, I spend my time exploring frontend architectures, writing Python scripts, and experimenting with new tech stacks.
-            </p>
+        {/* Asymmetrical Editorial Composition */}
+        <div className="mt-12 grid gap-12 lg:grid-cols-12">
+          {/* Left Column: Biography & Narrative */}
+          <div className="lg:col-span-6 flex flex-col justify-between space-y-8">
+            <div className="space-y-6">
+              <p className="font-mono text-xs uppercase tracking-wider text-[#d4ff32]">
+                [ BIOGRAPHICAL ABSTRACT ]
+              </p>
+              <h3 className="text-2xl sm:text-3xl font-light leading-snug text-[#f5f5f3]">
+                First-semester Computer Science student at{" "}
+                <span className="font-semibold text-white underline decoration-[#d4ff32] decoration-2 underline-offset-4">
+                  Bangalore Institute of Technology (BIT)
+                </span>
+                , Bangalore.
+              </h3>
+              <p className="text-base text-[#a1a1aa] leading-relaxed">
+                I am deeply drawn to the craftsmanship of building clean, responsive web applications and exploring core computational algorithms.
+              </p>
+              <p className="text-base text-[#a1a1aa] leading-relaxed">
+                When I&apos;m not writing code, I am experimenting with modern frontend architectures, writing Python scripts, and refining my understanding of software engineering fundamentals.
+              </p>
+            </div>
 
-            <div className="pt-2">
-              <span className="inline-flex items-center gap-2 text-sm text-pink-300 font-mono">
-                <span className="h-1.5 w-1.5 rounded-full bg-pink-400" />
-                Based in Bangalore, India
-              </span>
+            {/* Geographical / Institutional Coordinates Stamp */}
+            <div className="border border-[#232530] bg-[#111217] p-5 font-mono text-xs space-y-2">
+              <div className="flex items-center justify-between text-[#71717a] border-b border-[#1f212d] pb-2">
+                <span>INSTITUTION</span>
+                <span className="text-[#f5f5f3] font-medium">BIT BANGALORE</span>
+              </div>
+              <div className="flex items-center justify-between text-[#71717a] border-b border-[#1f212d] pb-2">
+                <span>SEMESTER / DISCIPLINE</span>
+                <span className="text-[#f5f5f3] font-medium">01 // COMPUTER SCIENCE</span>
+              </div>
+              <div className="flex items-center justify-between text-[#71717a]">
+                <span>LOCATION</span>
+                <span className="text-[#d4ff32]">BANGALORE, KARNATAKA, IN</span>
+              </div>
             </div>
           </div>
 
-          {/* Skills Column */}
-          <div className="flex flex-col justify-center rounded-xl border border-pink-950/80 bg-[#0d060f]/80 p-6 md:col-span-5">
-            <h4 className="mb-4 text-sm font-semibold uppercase tracking-wider text-pink-300">
-              Technical Skills
-            </h4>
-            <div className="flex flex-wrap gap-2.5">
-              {skills.map((skill) => (
-                <div
-                  key={skill.name}
-                  className="group flex items-center gap-2 rounded-lg border border-pink-900/40 bg-pink-950/30 px-3.5 py-2 text-sm font-medium text-pink-100 transition-all duration-300 hover:-translate-y-0.5 hover:border-pink-500/50 hover:bg-pink-900/40 hover:shadow-md hover:shadow-pink-500/10 cursor-default"
-                >
-                  <span className="transition-transform duration-200 group-hover:scale-110">
-                    {skill.icon}
+          {/* Right Column: Technical Capability Matrix (Art-directed Skill Tags) */}
+          <div className="lg:col-span-6 flex flex-col justify-between border-t lg:border-t-0 lg:border-l border-[#232530] lg:pl-12 pt-8 lg:pt-0">
+            <div>
+              <div className="flex items-center justify-between pb-4 border-b border-[#181920]">
+                <span className="font-mono text-xs uppercase tracking-wider text-[#71717a]">
+                  TECHNICAL SKILL MATRIX
+                </span>
+                <span className="font-mono text-xs text-[#d4ff32]">
+                  [05 VERIFIED TOOLS]
+                </span>
+              </div>
+
+              {/* Skill Items List */}
+              <div className="mt-6 space-y-3">
+                {skills.map((skill, index) => (
+                  <div
+                    key={skill.name}
+                    className="group relative flex flex-col sm:flex-row sm:items-center justify-between border border-[#1f212d] bg-[#111217]/60 p-4 transition-all duration-200 hover:border-[#d4ff32] hover:bg-[#111217]"
+                  >
+                    <div className="flex items-center gap-3">
+                      <span className="font-mono text-xs text-[#52525b] group-hover:text-[#d4ff32]">
+                        0{index + 1}.
+                      </span>
+                      <h4 className="text-lg font-bold uppercase tracking-tight text-[#f5f5f3] group-hover:text-[#d4ff32]">
+                        {skill.name}
+                      </h4>
+                    </div>
+
+                    <div className="mt-2 sm:mt-0 flex items-center gap-3 font-mono text-xs">
+                      <span className="text-[11px] text-[#71717a] hidden md:inline">
+                        {skill.indicator}
+                      </span>
+                      <span className="border border-[#27272a] bg-[#181920] px-2.5 py-1 text-[10px] uppercase text-[#a1a1aa] group-hover:border-[#d4ff32] group-hover:text-[#d4ff32]">
+                        {skill.badge}
+                      </span>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              {/* Skills summary chips */}
+              <div className="mt-6 flex flex-wrap gap-2 pt-4 border-t border-[#181920]">
+                {["HTML", "CSS", "JavaScript", "React", "Python"].map((s) => (
+                  <span
+                    key={s}
+                    className="inline-flex items-center gap-1.5 border border-[#27272a] bg-[#111217] px-3 py-1 font-mono text-xs text-[#a1a1aa] hover:border-[#d4ff32] hover:text-[#d4ff32] transition-colors"
+                  >
+                    <span className="h-1.5 w-1.5 rounded-full bg-[#d4ff32]" />
+                    {s}
                   </span>
-                  <span>{skill.name}</span>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
 
-            <div className="mt-6 border-t border-pink-950/80 pt-4">
-              <p className="text-xs text-pink-300/70">
-                Currently focusing on sharpening full-stack fundamentals, building interactive React interfaces, and algorithm practice in Python.
-              </p>
-            </div>
+            <p className="mt-8 font-mono text-xs text-[#52525b] leading-relaxed">
+              * Dedicated to writing structured, maintainable code with deep attention to typography, modularity, and runtime performance.
+            </p>
           </div>
         </div>
       </div>
